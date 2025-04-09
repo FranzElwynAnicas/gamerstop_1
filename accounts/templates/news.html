@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}GamerStop - News{% endblock %}
+
+{% block content %}
+<section style="font-family: 'Open Sans', sans-serif; background-color: #111; color: #fff; margin: 0; padding: 140px 20px 60px; min-height: 100vh;">
+    <div style="margin: 0 auto; max-width: 750px;"> 
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 38px; font-weight: bold; color: #fff; font-family: 'Bebas Neue', sans-serif;">
+                BREAKING NEWS!
+            </h1>
+        </div>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+            .news-container {
+                background-color: #222;
+                border-radius: 8px;
+                overflow: hidden;
+                margin-bottom: 15px;
+                padding: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+            }
+
+            .news-header {
+                font-size: 14px;
+                color: #aaa;
+                margin-bottom: 5px;
+            }
+
+            .news-title {
+                font-size: 18px;
+                font-weight: bold;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+
+            .news-button {
+                background-color: #333;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+                margin-top: 5px;
+            }
+
+            .news-button:hover {
+                background-color: #444;
+            }
+
+            .news-content {
+                display: none;
+                padding: 15px;
+                background-color: #2a2a2a;
+                color: #ccc;
+                border-radius: 4px;
+                margin-top: 10px;
+            }
+
+            .news-image {
+                width: 100%;
+                max-height: 180px; 
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+        </style>
+
+        <!-- News Items -->
+        <div class="news-container">
+            <img src="{% static 'images/Spring.png' %}" alt="News Image" class="news-image">
+            <div class="news-header">3D Ago</div>
+            <div class="news-title">🌸 Spring Sale Spectacular – Up to 50% Off on Top Games! 🛒</div>
+            <button class="news-button" onclick="toggleNews(this)">Read more</button>
+            <div class="news-content">
+                <p>Spring has arrived, and so have the biggest discounts of the season! 🌞 Enjoy up to 50% off on your favorite titles, including Call of Duty 🎯, League of Legends 🐉, and PUBG 🍗. Whether you're upgrading your loadout or unlocking premium skins, now’s the perfect time to expand your collection. Don’t miss out — this sale blooms for one week only! 🌷</p>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <img src="{% static 'images/COD.png' %}" alt="News Image" class="news-image">
+            <div class="news-header">1D Ago</div>
+            <div class="news-title">🎯 Call of Duty: New Season Hits with a Bang! 💥</div>
+            <button class="news-button" onclick="toggleNews(this)">Read more</button>
+            <div class="news-content">
+                <p>The latest Call of Duty update introduces a thrilling new season packed with explosive content. 🚁 Expect three fresh maps with dynamic weather, new legendary operators with powerful skills, and limited-time spring-themed skins to customize your loadout. Strategic changes to weapon balancing and faster matchmaking are also live, so gear up and jump into the action today! 🔥</p>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <img src="{% static 'images/LOL.png' %}" alt="News Image" class="news-image">
+            <div class="news-header">1H Ago</div>
+            <div class="news-title">🐉 League of Legends: New Champion, New Strategies! 🌪️</div>
+            <button class="news-button" onclick="toggleNews(this)">Read more</button>
+            <div class="news-content">
+                <p>The latest League of Legends patch introduces Aeris, a wind-wielding warrior with game-changing abilities like Gale Strike for long-range damage and Wind Barrier for defensive plays. 🌬️ Aeris' ultimate, Dragon’s Wrath, summons a dragon to wreak havoc on the battlefield. Plus, the Spring Blossom Skin Collection is live — refresh your look and dominate the Rift! 🐉</p>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <img src="{% static 'images/PUBG.png' %}" alt="News Image" class="news-image">
+            <div class="news-header">5H Ago</div>
+            <div class="news-title">🍗 Winner Winner, Chicken Dinner! PUBG’s New Features Are Here 🏆</div>
+            <button class="news-button" onclick="toggleNews(this)">Read more</button>
+            <div class="news-content">
+                <p>PUBG's latest update delivers big changes, including new tactical gear, better matchmaking, and the exciting Spring Survival Event 🐇, where you can unlock adorable bunny-themed outfits. The new Map Rotation System ensures more variety in matches, and squad-based rewards make teaming up more rewarding than ever. Time to grab that chicken dinner! 🍗</p>
+            </div>
+        </div>
+    
+        <div class="news-container">
+            <img src="{% static 'images/Mobile_App.png' %}" alt="News Image" class="news-image">
+            <div class="news-header">10H Ago</div>
+            <div class="news-title">📱 GamerStop Mobile App is Coming Soon! 💻</div>
+            <button class="news-button" onclick="toggleNews(this)">Read more</button>
+            <div class="news-content">
+                <p>Exciting news! 🚀 The official GamerStop Mobile App is coming soon, bringing all your favorite features straight to your phone. Expect instant news updates, smart search options, and easy access to the Community Hub for real-time discussions. 🌍 With fast browsing and push notifications for new deals and updates, the app is set to elevate your gaming experience. Stay tuned for the release date! 📱</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        function toggleNews(button) {
+            const content = button.nextElementSibling;
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                document.querySelectorAll('.news-content').forEach(item => {
+                    item.style.display = 'none';
+                });
+                content.style.display = "block";
+            }
+        }
+    </script>
+</section>
+{% endblock %}
