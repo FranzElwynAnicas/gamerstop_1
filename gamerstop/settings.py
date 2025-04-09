@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-atm+r5+__lt5*&0=qxrisqhxau=j=!ddxqd4yh*%*3e++i-+!6
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [gamerstop.onrender.com]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
