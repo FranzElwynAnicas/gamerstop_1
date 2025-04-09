@@ -8,6 +8,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['gamerstop.onrender.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://gamerstop.onrender.com',
+    'http://gamerstop.onrender.com',  # If using HTTP for testing
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
